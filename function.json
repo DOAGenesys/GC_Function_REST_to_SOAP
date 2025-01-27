@@ -6,6 +6,6 @@
     "Content-Type": "application/json"
   },
   "runtimeEnvironment": "nodejs22.x",
-  "handler": "index.handler",
+  "handler": "src/index.handler",
   "timeout": 15
 }
