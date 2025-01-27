@@ -1,4 +1,4 @@
-# REST-to-SOAP Translation Layer for Genesys Cloud
+# Genesys Cloud Function: REST-to-SOAP Translation Layer
 
 A Genesys Cloud Function designed to translate REST API requests into SOAP web service calls with enterprise-grade features including WS-Security support and retry mechanisms. This solution is particularly suited for integration scenarios requiring legacy system connectivity from Genesys Cloud.
 
