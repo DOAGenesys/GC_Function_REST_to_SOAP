@@ -1,0 +1,11 @@
+{
+  "name": "REST to SOAP",
+  "description": "Translates REST API requests to SOAP web service calls",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "runtimeEnvironment": "nodejs22.x",
+  "handler": "index.handler",
+  "timeout": 15
+}
