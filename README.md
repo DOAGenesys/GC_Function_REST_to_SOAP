@@ -2,6 +2,20 @@
 
 A Genesys Cloud Function designed to translate REST API requests into SOAP web service calls with enterprise-grade features including WS-Security support and retry mechanisms. This solution is particularly suited for integration scenarios requiring legacy system connectivity from Genesys Cloud.
 
+## Repository Structure
+
+```
+/
+├── src/
+│   └── index.js          # Main function implementation
+├── function.json         # Core function configuration
+├── input-contract.json   # Input parameter schema
+├── output-contract.json  # Response schema
+├── request-template.json # Request transformation template
+├── response-template.json# Response transformation template
+└── README.md            # Documentation
+```
+
 ## Key Features
 
 - **Bi-directional Translation**
@@ -11,7 +25,6 @@ A Genesys Cloud Function designed to translate REST API requests into SOAP web s
 - **Enterprise Security**
   - WS-Security (UsernameToken with PasswordDigest)
   - HTTP Basic Authentication
-  - Optional attachment size limits
 
 - **Operational Reliability**
   - Configurable retry logic with exponential backoff
@@ -45,10 +58,9 @@ A Genesys Cloud Function designed to translate REST API requests into SOAP web s
 
 ### Function Settings
 
-- **Runtime**: Node.js 18.x
+- **Runtime**: Node.js 22.x
 - **Handler**: Path format: `{path_to_handler_module}.{export_name_of_handler_method}`
-- **Timeout**: 1-15 seconds (function is terminated if exceeded)
-- **Memory**: Configure based on payload size (recommended ≥512MB for attachments)
+- **Timeout**: 15 seconds (function is terminated if exceeded)
 
 ### Installation Steps
 
@@ -156,5 +168,3 @@ Example transformation:
 - **Payload Size**
   - 256 MB maximum ZIP file size
   - 15 second maximum execution time
-
----
