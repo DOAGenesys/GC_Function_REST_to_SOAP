@@ -1,0 +1,16 @@
+{
+  "endpoint": "${input.endpoint}",
+  "requestMethod": "${input.requestMethod}",
+  "soapMethod": "${input.soapMethod}",
+  "parameters": "${input.parameters}"
+  #if("$!{input.soapAction}" != ""), "soapAction": "${input.soapAction}"#end
+  #if("$!{input.soapVersion}" != ""), "soapVersion": "${input.soapVersion}"#end
+  #if("$!{input.soapTimeout}" != ""), "soapTimeout": ${input.soapTimeout}#end
+  #if("$!{input.verboseLogging}" != ""), "verboseLogging": ${input.verboseLogging}#end
+  #if("$!{input.retryCount}" != ""), "retryCount": ${input.retryCount}#end
+  #if("$!{input.basicAuthUser}" != ""), "basicAuthUser": "${input.basicAuthUser}"#end
+  #if("$!{input.basicAuthPass}" != ""), "basicAuthPass": "${input.basicAuthPass}"#end
+  #if("$!{input.wssecUser}" != ""), "wssecUser": "${input.wssecUser}"#end
+  #if("$!{input.wssecPass}" != ""), "wssecPass": "${input.wssecPass}"#end
+  #if("$!{input.headers}" != ""), "headers": "${input.headers}"#end
+}
