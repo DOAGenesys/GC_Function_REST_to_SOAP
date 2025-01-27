@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "REST-to-SOAP Request",
+  "description": "Parameters required for the SOAP call.",
+  "type": "object",
+  "required": [
+    "endpoint",
+    "requestMethod",
+    "soapMethod",
+    "parameters"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "endpoint": {
+      "type": "string",
+      "description": "The full URL of the SOAP endpoint.",
+      "default": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso"
+    },
+    "requestMethod": {
+      "type": "string",
+      "description": "HTTP method (typically 'POST' for SOAP).",
+      "default": "POST"
+    },
+    "soapMethod": {
+      "type": "string",
+      "description": "The SOAP operation name (e.g., 'NumberToWords').",
+      "default": "NumberToWords"
+    },
+    "parameters": {
+      "type": "string",
+      "description": "JSON-encoded string of the SOAP body parameters. Parse into an object inside the Lambda.",
+      "default": "\\\"{\\\\\\\"parameters\\\\\\\": {\\\\\\\"ubiNum\\\\\\\": 500}}\\\""
+    },
+    "soapAction": {
+      "type": "string",
+      "description": "Optional. Overrides default SOAPAction derived by the code."
+    },
+    "soapVersion": {
+      "type": "string",
+      "description": "Optional. Allowed values: '1.1' or '1.2'.",
+      "default": "1.1",
+      "enum": [
+        "1.1",
+        "1.2"
+      ]
+    },
+    "soapTimeout": {
+      "type": "number",
+      "description": "Optional. SOAP request timeout in milliseconds.",
+      "default": 10000
+    },
+    "verboseLogging": {
+      "type": "boolean",
+      "description": "Optional. If true, logs the entire SOAP envelope."
+    },
+    "retryCount": {
+      "type": "number",
+      "description": "Optional. Number of retry attempts on network or 5xx errors.",
+      "default": 3
+    },
+    "basicAuthUser": {
+      "type": "string",
+      "description": "Optional. Basic Auth username."
+    },
+    "basicAuthPass": {
+      "type": "string",
+      "description": "Optional. Basic Auth password."
+    },
+    "wssecUser": {
+      "type": "string",
+      "description": "Optional. WS-Security username."
+    },
+    "wssecPass": {
+      "type": "string",
+      "description": "Optional. WS-Security password."
+    },
+    "headers": {
+      "type": "string",
+      "description": "Optional. JSON-encoded string of additional HTTP headers. Parse into an object inside the Lambda."
+    }
+  }
+}
