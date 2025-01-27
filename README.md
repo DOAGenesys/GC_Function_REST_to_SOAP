@@ -61,6 +61,7 @@ A Genesys Cloud Function designed to translate REST API requests into SOAP web s
    ```bash
    zip -r function.zip *.js node_modules/
    ```
+   Or zip manually node_modules + src + package.json into function.zip
 
 3. **Genesys Cloud Deployment**
    - Navigate to Admin > Functions
