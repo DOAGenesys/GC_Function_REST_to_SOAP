@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "REST-to-SOAP Response",
+  "type": "object",
+  "required": [
+    "jsonResponse"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "jsonResponse": {
+      "type": "object",
+      "description": "The raw JSON object returned by the code",
+      "required": [
+        "result"
+      ],
+      "properties": {
+        "result": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
